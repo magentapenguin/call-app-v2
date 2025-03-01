@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="a">
+      <stop offset="0" style="stop-color:#9150f1"/>
+      <stop offset=".25" style="stop-color:#4d50f1"/>
+      <stop offset=".5" style="stop-color:#44cbf1"/>
+      <stop offset=".75" style="stop-color:#69ffa1"/>
+      <stop offset="1" style="stop-color:#86fe58"/>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="b" x1="0" x2="512" y1="0" y2="512" gradientUnits="userSpaceOnUse" spreadMethod="pad"/>
+  </defs>
+<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24A40.12 40.12 0 0 0 0 64c0 247.4 200.6 448 448 448 18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40a39.87 39.87 0 0 0-46.3 11.6L304.7 368A337.97 337.97 0 0 1 144 207.3l49.3-40.3c13.7-11.2 18.4-30 11.6-46.3l-40-96z" style="fill:url(#b)"/>
+  <path d="M411.28 41.65q15.56 0 26 5.42 10.53 5.41 15.75 14.37 5.32 8.86 5.32 19.3 0 8.27-2.86 16.25-2.76 7.87-9.16 16.73-6.4 8.77-17.03 19.5-10.53 10.73-26.1 24.62h58.3l-3.35 23.72h-90.68v-22.05q16.83-16.25 28.16-27.96 11.42-11.72 18.21-20.19 6.9-8.56 9.85-15.16 2.95-6.6 2.95-12.7 0-8.27-4.82-13.1-4.73-4.82-13.5-4.82-7.77 0-13.48 3.25-5.71 3.25-11.03 10.53L364.71 65q7.68-10.64 18.9-16.94 11.23-6.4 27.67-6.4zm-112.83 114.7 25.7-111.25h33.08l-39.39 136.46h-39.97L238.67 45.1h34.27z" aria-label="V2" style="font-weight:700;font-size:192px;font-family:&quot;Fira Code&quot;;-inkscape-font-specification:&quot;Fira Code Bold&quot;;fill:url(#b);stroke-width:7.278;stroke-linecap:round;stroke-linejoin:bevel;paint-order:stroke fill markers"/>
+</svg>
