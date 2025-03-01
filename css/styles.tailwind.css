@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+
+@theme {
+    --theme-steps: #9150f1 0%, #4d50f1 25%, #44cbf1 50%, #69ffa1 75%, #27fe58 100%;
+    --default-font-family: 'Inter', sans-serif;
+    --font-sans: var(--default-font-family);
+}
+@layer utilities {
+    .fancy-title {
+        background: linear-gradient(135deg, var(--theme-steps));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+@layer components {
+    .btn {
+        @apply border-1 border-black dark:border-white py-0 px-1 rounded cursor-pointer font-bold mx-1 my-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black;
+    }
+}
