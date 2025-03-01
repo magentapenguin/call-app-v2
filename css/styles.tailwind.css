@@ -1,5 +1,5 @@
-@import 'tailwindcss';
 @import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+@import 'tailwindcss';
 
 @theme {
     --theme-steps: #9150f1 0%, #4d50f1 25%, #44cbf1 50%, #69ffa1 75%, #27fe58 100%;
