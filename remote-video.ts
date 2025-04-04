@@ -8,9 +8,9 @@ export class RemoteVideo extends HTMLElement {
         super();
         this.appendChild(html`
                 <div class="video-container">
-                    <video autoplay playsinline disablepictureinpicture></video> <!-- Placeholder video -->
+                    <video autoplay playsinline disablepictureinpicture></video>
                     <p>Remote Video</p>
-                    <div class="flex items-center">
+                    <div class="flex items-center float-right">
                         <button class="mute">
                             <i class="fa-solid fa-volume-xmark"></i>
                             <span class="sr-only">Mute</span>

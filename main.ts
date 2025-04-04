@@ -116,6 +116,14 @@ const cleanUp = () => {
         mediaStream.getTracks().forEach(track => track.stop());
         mediaStream = null;
     }
+    // clear video elements
+    for (const peerId in videoElements) {
+        const remoteVideo = videoElements[peerId];
+        remoteVideo.remove();
+        delete videoElements[peerId];
+    }
+    // clear connections
+    connections.forEach(c => c.close());
     if (peer) {
         peer.destroy();
         peer = null;
@@ -171,6 +179,11 @@ const handleMediaConnection = (mediaConnection: PeerJS.MediaConnection) => {
         console.log('Remote video element created', remoteVideo, typeof remoteVideo);
         remoteVideo.setStream(stream);
         videoContainer.appendChild(remoteVideo);
+        if (videoElements[mediaConnection.peer]) {
+            console.log('Remote video element already exists, removing it...');
+            videoElements[mediaConnection.peer].remove();
+            delete videoElements[mediaConnection.peer];
+        }
         videoElements[mediaConnection.peer] = remoteVideo;
     });
     mediaConnection.on('close', () => {
