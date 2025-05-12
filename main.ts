@@ -93,7 +93,7 @@ function toast(title: string, message: string, duration: number | false = 3000) 
 toast('Welcome!', 'You can use this app to connect with other users and share your video and audio streams.', false); // test toast
 
 fixVideoRightClick(localVideo);
-function fixVideoRightClick(video: HTMLVideoElement) {
+function fixVideoRightClick(video: HTMLElement) {
     video.addEventListener('contextmenu', (e) => {
         e.preventDefault();
     });
@@ -159,6 +159,20 @@ const start = async () => {
         mediaConnection.answer(mediaStream); // Answer the call with our stream
         handleMediaConnection(mediaConnection);
     });
+    peer.on('error', (err) => {
+        console.error('Peer error', err);
+        if (err.type === 'peer-unavailable') {
+            toast('Error', 'Peer unavailable', 3000);
+        } else if (err.type === 'invalid-id') {
+            toast('Error', 'Invalid ID', 3000);
+        } else if (err.type === 'network') {
+            toast('Error', 'Network error', 3000);
+        } else if (err.type === 'browser-incompatible') {
+            toast('Error', 'Browser incompatible', 3000);
+        } else {
+            toast('Error', 'Unknown error', 3000);
+        }
+    });
 };
 
 const connectToPeer = (peerId: string) => {
@@ -175,15 +189,11 @@ const handleMediaConnection = (mediaConnection: PeerJS.MediaConnection) => {
     mediaConnections.push(mediaConnection);
     mediaConnection.on('stream', (stream) => {
         console.log('Received stream from ' + mediaConnection.peer);
+        if (videoElements[mediaConnection.peer]) return;
         const remoteVideo = new RemoteVideo();
         console.log('Remote video element created', remoteVideo, typeof remoteVideo);
         remoteVideo.setStream(stream);
         videoContainer.appendChild(remoteVideo);
-        if (videoElements[mediaConnection.peer]) {
-            console.log('Remote video element already exists, removing it...');
-            videoElements[mediaConnection.peer].remove();
-            delete videoElements[mediaConnection.peer];
-        }
         videoElements[mediaConnection.peer] = remoteVideo;
     });
     mediaConnection.on('close', () => {
